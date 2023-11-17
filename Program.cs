@@ -1,21 +1,27 @@
-﻿﻿double a, b, c, delta, x1, x2;
+﻿﻿// A fórmula de Bhaskara é um método resolutivo para equações do segundo grau.
+// Essa fórmula é um método para encontrar as raízes reais de uma equação de segundo grau fazendo uso apenas de seus coeficientes
 
-Console.WriteLine("-- Equação do segundo grau --");
+double a, b, c, delta, x1, x2;
 
-Console.Write("(a): ");
-a = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("... Equação do segundo grau ...");
 
-Console.Write("(b): ");
-b = Convert.ToDouble(Console.ReadLine());
+Console.Write(" Digite o valor de (a): "); 
+a = Convert.ToDouble(Console.ReadLine());  
 
-Console.Write("(c): ");
-c = Convert.ToDouble(Console.ReadLine());
+Console.Write(" Digite o valor de (b): "); 
+b = Convert.ToDouble(Console.ReadLine()); 
+
+Console.Write(" Digite o valor de (c): "); 
+c = Convert.ToDouble(Console.ReadLine()); 
 
 Console.WriteLine();
 
 if (a == 0)
-{
+{   //se a = 0 informar que não é equação de segundo grau
+    Console.ForegroundColor = ConsoleColor.Red; //altera coloração da letra para vermelho
     Console.WriteLine("Não é uma equação de segundo grau!");
+    Console.ResetColor(); //reseta cor original
+
 }
 else
 {
@@ -23,13 +29,19 @@ else
 
     if (delta < 0)
     {
-        Console.WriteLine($"Como delta = {delta:N2}, a equação não possui raízes reais!");
-    }
+        
+        Console.ForegroundColor = ConsoleColor.Red; 
+        Console.WriteLine($"...Resultado...\n Como delta = {delta:N2}, a equação não possui raízes reais!"); 
+        Console.ResetColor(); //reseta cor original
+}
+    
     else
     {
-        x1 = (-b + Math.Sqrt(delta)) / (2 * a);
+        x1 = (-b + Math.Sqrt(delta)) / (2 * a); 
         x2 = (-b - Math.Sqrt(delta)) / (2 * a);
 
-        Console.WriteLine($"x1 = {x1:N2} e x2 = {x2:N2}");
+        Console.ForegroundColor = ConsoleColor.Green; //altera coloração da letra para verde
+        Console.WriteLine($"...Resultado...\n x1 = {x1:N2}\n x2 = {x2:N2}"); //mostra o resultado na tela
+        Console.ResetColor(); //reseta cor original
     }
 }
