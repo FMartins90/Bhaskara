@@ -3,18 +3,23 @@
 
 double a, b, c, delta, x1, x2;
 
+// console informa a frase
 Console.WriteLine("... Equação do segundo grau ...");
 
+//console pede para usuario digitar o valor de a e converte em numero
 Console.Write(" Digite o valor de (a): "); 
 a = Convert.ToDouble(Console.ReadLine());  
 
+
 Console.Write(" Digite o valor de (b): "); 
 b = Convert.ToDouble(Console.ReadLine()); 
+
 
 Console.Write(" Digite o valor de (c): "); 
 c = Convert.ToDouble(Console.ReadLine()); 
 
 Console.WriteLine();
+
 
 if (a == 0)
 {   //se a = 0 informar que não é equação de segundo grau
@@ -25,8 +30,10 @@ if (a == 0)
 }
 else
 {
+    //caso valido executar a formula
     delta = b * b - 4 * a * c;
 
+    //se delta menor que zero informar que não possui raizes reais
     if (delta < 0)
     {
         
